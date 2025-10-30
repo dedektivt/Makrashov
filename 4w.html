@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+</head>
+<body>
+    <script>
+        // Задача 1: Ввод числа
+        let userNumber = prompt("Введите любое число:");
+        console.log("Задача 1 - Введенное число:", userNumber);
+        console.log("Тип переменной userNumber:", typeof userNumber);
+
+        // Задача 2: Калькулятор
+        console.log("\n--- Задача 2: Калькулятор ---");
+        let num1 = parseFloat(prompt("Введите первое число для калькулятора:"));
+        let num2 = parseFloat(prompt("Введите второе число для калькулятора:"));
+        
+        // Проверка на корректность ввода
+        if (!isNaN(num1) && !isNaN(num2)) {
+            let sum = num1 + num2;
+            let difference = num1 - num2;
+            let product = num1 * num2;
+            let quotient = num2 !== 0 ? num1 / num2 : "Ошибка: деление на ноль";
+            let remainder = num2 !== 0 ? num1 % num2 : "Ошибка: деление на ноль";
+            
+            console.log(`${num1} + ${num2} = ${sum}`);
+            console.log(`${num1} - ${num2} = ${difference}`);
+            console.log(`${num1} * ${num2} = ${product}`);
+            console.log(`${num1} / ${num2} = ${quotient}`);
+            console.log(`${num1} % ${num2} = ${remainder}`);
+            
+            // Вывод в alert для наглядности
+            alert(`Результаты операций:\n
+${num1} + ${num2} = ${sum}
+${num1} - ${num2} = ${difference}
+${num1} * ${num2} = ${product}
+${num1} / ${num2} = ${quotient}
+${num1} % ${num2} = ${remainder}`);
+        } else {
+            console.log("Ошибка: введены некорректные числа");
+            alert("Ошибка: введены некорректные числа");
+        }
+
+        // Задача 3: Угадывание числа
+        console.log("\n--- Задача 3: Угадывание числа ---");
+        alert("Задумайте любое число. Умножьте его на 2 и прибавьте 7. Введите полученный результат:");
+        
+        let result = parseFloat(prompt("Введите результат вычислений:"));
+        
+        if (!isNaN(result)) {
+            let guessedNumber = (result - 7) / 2;
+            console.log(`Пользователь задумал число: ${guessedNumber}`);
+            alert(`Вы задумали число: ${guessedNumber}`);
+        } else {
+            console.log("Ошибка: введено некорректное число");
+            alert("Ошибка: введено некорректное число");
+        }
+
+        // Задача 4: Расчет возраста
+        console.log("\n--- Задача 4: Расчет возраста ---");
+        let userName = prompt("Введите ваше имя:");
+        let birthYear = parseInt(prompt("Введите ваш год рождения:"));
+        
+        if (userName && !isNaN(birthYear)) {
+            let currentYear = new Date().getFullYear();
+            let age = currentYear - birthYear;
+            
+            console.log(`Имя: ${userName}`);
+            console.log(`Год рождения: ${birthYear}`);
+            console.log(`Возраст: ${age}`);
+            console.log("Тип переменной userName:", typeof userName);
+            console.log("Тип переменной birthYear:", typeof birthYear);
+            console.log("Тип переменной age:", typeof age);
+            
+            // Вывод в документ
+            document.write(`<p style="font-size: 18px; color: #333;">${userName}: ${age}</p>`);
+        } else {
+            console.log("Ошибка: некорректный ввод данных");
+            document.write("<p style='color: red;'>Ошибка: некорректный ввод данных</p>");
+        }
+
+        // Дополнительно: вывод типов всех переменных
+        console.log("\n--- Типы всех переменных ---");
+        console.log("userNumber:", typeof userNumber);
+        console.log("num1:", typeof num1);
+        console.log("num2:", typeof num2);
+        console.log("result:", typeof result);
+        console.log("userName:", typeof userName);
+        console.log("birthYear:", typeof birthYear);
+    </script>
+</body>
+</html>
